@@ -1,12 +1,10 @@
 package bcomposes.twitter
 
 import twitter4j._
-import twitter4j.conf.Configuration
 import collection.JavaConversions._
 
 /**
- * Gets a Twitter instance set up and ready to use. Also provides a
- * function for checking a RateLimitStatus and waiting if necessary.
+ * Gets a Twitter instance set up and ready to use.
  */
 trait TwitterInstance {
   val twitter = new TwitterFactory().getInstance
@@ -76,8 +74,8 @@ object ReplyOK extends TwitterInstance {
 }
 
 /**
- * A trait with checkAndWait function that check whether the
- * rate limit has been hit and wait if so.
+ * A trait with checkAndWait function that checks whether the
+ * rate limit has been hit and wait if it has.
  *
  * This ignores the fact that different request types have different
  * limits, but it keeps things simple.
